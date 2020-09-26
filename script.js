@@ -13,12 +13,22 @@ const USSAssembly = {
     );
     if (userInput === "yes") {
       let shot = Math.random();
-      if (shot < this.accuracy) {
-        alienShip1.hull -= this.firepower;
-        if (alienShip1.hull > 0) {
-          // alien fires
-        } else {
-          //alien ship destroyed
+      while (this.hull != 0 && alienShip1.hull != 0) {
+        if (shot < this.accuracy) {
+          alienShip1.hull -= this.firepower;
+          if (alienShip1.hull > 0) {
+            // alien fires
+            this.hull -= alienShip1.firepower; 
+            console.log();
+          } 
+
+        //     else if (alienShip1.hull === 0) {
+        //     //alien ship destroyed
+        //     console.log('You destroyed the ship');
+        // } else if (this.hull === 0) {
+        //   console.log('You are dead');
+        // } 
+      
         }
       }
     }
@@ -33,3 +43,4 @@ const alienShip1 = {
 
 USSAssembly.attack(alienShip1);
 console.log(alienShip1.hull);
+console.log(USSAssembly.hull);
