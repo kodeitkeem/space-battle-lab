@@ -15,6 +15,11 @@ const USSAssembly = {
       let shot = Math.random();
       if (shot < this.accuracy) {
         alienShip1.hull -= this.firepower;
+        if (alienShip1.hull > 0) {
+          // alien fires
+        } else {
+          //alien ship destroyed
+        }
       }
     }
   },
