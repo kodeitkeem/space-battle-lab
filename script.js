@@ -2,31 +2,32 @@
 // Use input to call function or something similar to attack ship
 
 
-
 let userInput = ''
 
 const USSAssembly = {
     hull: 20,
     firepower: 5,
     accuracy: .7,
-    attack: function() {
-        userInput = prompt('Do you want to attack alien ship?')
+    attack: function(alienShip1) {
+        userInput = prompt('Do you want to attack alien ship? Enter "yes" to continue')
         if (userInput === 'yes') {
-            alert(`You selected ${userInput} and the result is...`)
-            
+            let shot = Math.random()
+            if (shot < this.accuracy) {
+                alienShip1.hull -= this.firepower
+            }
         }
     }
 }
 
 const alienShip1 = {
-    hull: Math.floor(Math.random() * 4) + 3,
+    hull: 10,
     firepower: Math.floor(Math.random() * 3) + 2,
-    accuracy: .Math.random() * (.8 - .6) + .6,
+    accuracy: Math.random() * (.8 - .6) + .6,
+    }
 
-}
+USSAssembly.attack(alienShip1)
+console.log(alienShip1.hull)
 
-USSAssembly.attack()
-console.log(userInput)
 
 
 
