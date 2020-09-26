@@ -21,7 +21,8 @@ const USSAssembly = {
 const alienShip1 = {
     hull: Math.floor(Math.random() * 4) + 3,
     firepower: Math.floor(Math.random() * 3) + 2,
-    accuracy: .6 //Needs to be between .6 and .8
+    accuracy: .Math.random() * (.8 - .6) + .6,
+
 }
 
 USSAssembly.attack()
